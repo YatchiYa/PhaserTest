@@ -1,0 +1,17 @@
+{
+    "assets": {
+        "map_tilesets": {"type": "image", "source": "assets/images/tiles/Outside_A2.png"},
+
+        "player_spritesheet": {"type": "spritesheet", "source": "assets/images/players/punckboy.png", "frame_width": 30, "frame_height": 48},
+        
+        "cave_level_tilemap": {"type": "tilemap", "source": "assets/maps/cave.json"}
+    },
+    "groups": [
+        "doors",
+        "players"
+    ],
+    "map": {
+        "key": "cave_level_tilemap",
+        "tilesets": ["map_tilesets"]
+    }
+}

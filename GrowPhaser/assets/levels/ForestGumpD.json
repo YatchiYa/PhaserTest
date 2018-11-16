@@ -1,0 +1,21 @@
+{
+    "assets": {
+        "map_tileset": {"type": "image", "source": "assets/images/tiles/Outside_A2.png"},
+        "river_tileset": {"type": "image", "source": "assets/images/tiles/terrain_atlas.png"},
+        "tree_tileset": {"type": "image", "source": "assets/images/tiles/trees.png"},
+        "house_tileset": {"type": "image", "source": "assets/images/tiles/Outside_A3.png"},
+        "housest_tileset": {"type": "image", "source": "assets/images/tiles/Outside_B.png"},
+
+        "player_spritesheet": {"type": "spritesheet", "source": "assets/images/players/punckboy.png", "frame_width": 30, "frame_height": 48},
+        
+        "ForestGumpD_level_tilemap": {"type": "tilemap", "source": "assets/maps/ForestGumpD.json"}
+    },
+    "groups": [
+        "doors",
+        "players"
+    ],
+    "map": {
+        "key": "ForestGumpD_level_tilemap",
+        "tilesets": ["map_tileset", "river_tileset", "tree_tileset", "house_tileset", "housest_tileset"]
+    }
+}

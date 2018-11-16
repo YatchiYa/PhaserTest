@@ -1,0 +1,38 @@
+{
+    "assets": {
+        "background_image": {"type": "image", "source": "assets/images/world/fantasy.jpg"}
+    },
+    "groups": [
+        "background",
+        "texts"
+    ],
+    "prefabs": {
+        "background": {
+            "type": "background",
+            "position": {"x": 0, "y": 0},
+            "properties": {
+                "texture": "background_image",
+                "group": "background",
+                "anchor": {"x": 0, "y": 0}
+            }
+        },
+        "title_message": {
+            "type": "text",
+            "position": {"x": 250, "y": 120},
+            "properties": {
+                "style": {"font": "65px Kells", "fill": "#000000"},
+                "text": "Grow Project",
+                "group": "texts"
+            }
+        },
+        "start_message": {
+            "type": "text",
+            "position": {"x": 400, "y": 420},
+            "properties": {
+                "style": {"font": "20px Kells", "fill": "#000000"},
+                "text": "click to start playing",
+                "group": "texts"
+            }
+        }
+    }
+}
