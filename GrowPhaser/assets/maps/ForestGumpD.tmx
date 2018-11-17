@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="15" tileheight="15" infinite="0" nextobjectid="26">
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="15" tileheight="15" infinite="0" nextobjectid="29">
  <tileset firstgid="1" name="Outside_A2" tilewidth="15" tileheight="15" tilecount="1938" columns="51">
-  <image source="../images/tiles/Outside_A2.png" width="768" height="576"/>
+  <image source="../../../../../../Desktop/test global pomodor Grow project/GrowPhaser/assets/images/tiles/Outside_A2.png" width="768" height="576"/>
  </tileset>
  <tileset firstgid="1939" name="terrain_atlas" tilewidth="15" tileheight="15" tilecount="4624" columns="68">
-  <image source="../images/tiles/terrain_atlas.png" width="1024" height="1024"/>
+  <image source="../../../../../../Desktop/test global pomodor Grow project/GrowPhaser/assets/images/tiles/terrain_atlas.png" width="1024" height="1024"/>
  </tileset>
  <tileset firstgid="6563" name="trees" tilewidth="15" tileheight="15" tilecount="2601" columns="51">
-  <image source="../images/tiles/trees.png" width="768" height="768"/>
+  <image source="../../../../../../Desktop/test global pomodor Grow project/GrowPhaser/assets/images/tiles/trees.png" width="768" height="768"/>
  </tileset>
  <tileset firstgid="9164" name="Outside_A3" tilewidth="15" tileheight="15" tilecount="1275" columns="51">
-  <image source="../images/tiles/Outside_A3.png" width="768" height="384"/>
+  <image source="../../../../../../Desktop/test global pomodor Grow project/GrowPhaser/assets/images/tiles/Outside_A3.png" width="768" height="384"/>
  </tileset>
  <tileset firstgid="10439" name="Outside_B" tilewidth="15" tileheight="15" tilecount="2601" columns="51">
-  <image source="../images/tiles/Outside_B.png" width="768" height="768"/>
+  <image source="../../../../../../Desktop/test global pomodor Grow project/GrowPhaser/assets/images/tiles/Outside_B.png" width="768" height="768"/>
  </tileset>
- <objectgroup draworder="index" name="object">
-  <object id="10" name="player" type="player" x="209" y="1148.67">
-   <properties>
-    <property name="group" value="players"/>
-    <property name="texture" value="player_spritesheet"/>
-    <property name="walking_speed" type="int" value="100"/>
-   </properties>
-  </object>
-  <object id="25" name="door" type="door" x="356.5" y="769" width="29" height="26">
-   <properties>
-    <property name="group" value="doors"/>
-    <property name="next_level" value="Cave"/>
-   </properties>
-  </object>
- </objectgroup>
  <layer name="background" width="80" height="80">
   <properties>
    <property name="tileset" value="map_tileset"/>
@@ -555,8 +540,25 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup draworder="index" name="object">
+  <object id="10" name="player" type="player" x="524" y="1124.67">
+   <properties>
+    <property name="group" value="players"/>
+    <property name="texture" value="player_spritesheet"/>
+    <property name="walking_speed" type="int" value="150"/>
+   </properties>
+  </object>
+  <object id="28" name="door" type="door" x="352.5" y="715" width="29" height="26">
+   <properties>
+    <property name="group" value="doors"/>
+    <property name="next_level" value="cave"/>
+   </properties>
+  </object>
+ </objectgroup>
  <layer name="houseDown" width="80" height="80">
   <properties>
+   <property name="depth" type="bool" value="true"/>
+   <property name="depth_z" type="int" value="10"/>
    <property name="tileset" value="house_tileset"/>
   </properties>
   <data encoding="csv">
@@ -644,6 +646,8 @@
  </layer>
  <layer name="houseSt" width="80" height="80">
   <properties>
+   <property name="depth" type="bool" value="true"/>
+   <property name="depth_z" type="int" value="11"/>
    <property name="tileset" value="housest_tileset"/>
   </properties>
   <data encoding="csv">

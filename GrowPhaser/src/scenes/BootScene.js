@@ -4,24 +4,26 @@ class BootScene extends Phaser.Scene {
             key: 'BootScene'
         });
         
-        this.levels = {TitleScene: 'assets/levels/title_screen.json', WorldScene: 'assets/levels/ForestGumpD.json', Cave: 'assets/levels/cave.json'};
+        this.levels = {title: {key: 'TitleScene', path: 'assets/levels/title_screen.json'}, 
+        WorldScene: {key: 'WorldScene', path: 'assets/levels/ForestGumpD.json'}, 
+        cave: {key: 'WorldScene', path:'assets/levels/cave.json'},
+     };
     }
     
     preload () {
-        for (let level_key in this.levels) {
-            let level_path = this.levels[level_key];
-            this.load.json(level_key, level_path);
+        for (let level_name in this.levels) {
+            let level = this.levels[level_name];
+            this.load.json(level_name, level.path);
         }
     }
     
     create (data) {
         let scene = data.scene;
         if (Object.keys(data).length === 0 && data.constructor === Object) {
-            scene = 'TitleScene';
+            scene = 'title';
         }
         let level_data = this.cache.json.get(scene);
-        console.log(" the scene runing now : " + scene);
-        this.scene.start('LoadingScene', {level_data: level_data, scene: scene});
+        this.scene.start('LoadingScene', {level_data: level_data, scene: this.levels[scene].key});
     }
 }
 

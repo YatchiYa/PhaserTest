@@ -66,6 +66,9 @@ class Player extends Prefab {
 
        	this.stopped_frames = [0,9,0,3,6];
 
+        this.z = -1 ;
+        console.log(this);
+
     }
 
         update(){

@@ -24,7 +24,6 @@ class WorldScene extends JSONLevelScene {
         this.map.tilesets.forEach(function (tileset) {
             let map_tileset = this.map.addTilesetImage(tileset.name, this.level_data.map.tilesets[tileset_index]);
             this.tilesets[this.level_data.map.tilesets[tileset_index]] = map_tileset;
-            console.log(map_tileset);
             tileset_index += 1;
         }, this);
 	
@@ -32,10 +31,19 @@ class WorldScene extends JSONLevelScene {
         this.layers = {};
         this.map.layers.forEach(function (layer) {
             this.layers[layer.name] = this.map.createStaticLayer(layer.name, this.tilesets[layer.properties.tileset]);
+
+            // checking the collision propreties
             if (layer.properties.collision) { // collision layer
                 this.map.setCollisionByExclusion([-1], true, layer.name);
             }
+
+            // cheking the depth properties
+            if (layer.properties.depth) { // collision layer
+                this.layers[layer.name].setDepth(layer.properties.depth_z);
+            }
+
         }, this);
+
 
         super.create();
         
@@ -47,6 +55,7 @@ class WorldScene extends JSONLevelScene {
        //  this.cameras.main.startFollow(this.prefab_classes.player);
        //  console.log(this.cameras.main.follow(this.player));
         // this.cameras.main.roundPixels = true;
+
         
     }
     
